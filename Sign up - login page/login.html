@@ -1,0 +1,99 @@
+<html>
+
+    <head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signin</title>
+        <link rel="icon" href="../images/qr_logo.ico" type="image/x-icon">
+
+        <!-- links -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/all.min.css">
+        <link rel="stylesheet" href="../css/login.css">
+
+    </head>
+
+    <body>
+        <!-- login page -->
+
+        <section>
+            <div class="container">
+                <div class="row vh-100">
+
+                    <div class="col-lg-6 text-center p-2 py-3 p-xl-5">
+                        <img class="w-100 sign-in-img" src="../images/qr_logo2.png" alt="qr-code">
+                        <h2 class="mb-3 mt-3">E-Learning Platform</h2>
+                        <img src="../images/online-study.svg" alt="E-Learning online-study" class="img-fluid ">
+                    </div>
+
+                    <div class="col-lg-5 offset-lg-1 py-3 text-light border-0 signin-card">
+                        <div class="container h-100">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-4 text-center">
+                                        <h1>Sign in</h1>
+                                        <p>Free access to our dashboard.</p>
+                                    </div>
+
+                                    <form method="POST" action="../js/sign-in.js">
+                                        <div id="alert" class="alert alert-danger text-center fw-bold visually-hidden"
+                                            role="alert">
+                                            Incorrect email address or password
+                                        </div>
+                                        <label for="email">Email address</label>
+                                        <input id="email" type="text" name="Email" placeholder="name@example.com"
+                                            class="form-control form-control-lg">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <label for="password">Password</label>
+                                            <a href="#" class="text-decoration-none secondary-color">Forget
+                                                password?</a>
+                                        </div>
+                                        <input id="password" type="password" name="Password" placeholder="************"
+                                            class="form-control form-control-lg">
+                                        <input id="remember-me" name="remember" type="checkbox">
+                                        <label for="remember-me" class="form-check-label">Remember me</label>
+                                        <div class="mt-4 text-center col-12">
+                                            <button id="signInBtn" class="text-uppercase btn btn-lg btn-light">sign
+                                                in</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-12 my-5 d-flex justify-content-around align-items-center flex-wrap">
+                                    <div class="icons d-flex p-2">
+                                        <i class="fa-brands fa-facebook-square"></i>
+                                        <i class="fa-brands fa-github-square"></i>
+                                        <i class="fa-brands fa-linkedin"></i>
+                                        <i class="fa-brands fa-twitter-square"></i>
+                                    </div>
+
+                                    <ul class="m-0 list-unstyled d-flex justify-content-evenly">
+                                        <li> <a href="../index.html#home">Home</a> </li>
+                                        <li> <a href="../index.html#about">About us</a> </li>
+                                        <li>FAQs</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/sign-in.js"></script>
+    </body>
+
+    </html>

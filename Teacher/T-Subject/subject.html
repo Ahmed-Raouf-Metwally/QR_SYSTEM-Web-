@@ -1,0 +1,229 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Learning dashboard</title>
+    <link rel="icon" href="../../images/qr_logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/subject.css">
+
+</head>
+
+
+<body>
+    <div class="d-flex main">
+        <aside class="px-3 pt-3 sidebar vh-100 flex-shrink-0">
+            <div class="d-flex flex-column">
+                <a href="../T-Dashboard/home.html"
+                    class="text-decoration-none d-flex justify-content-center align-items-center">
+                    <img src="../../images/qr_logo.ico" alt="e-Learning qr-logo" class="logo-icon">
+                    <span class="logo-text">E-learn</span>
+                </a>
+
+                <ul class="p-0 list-unstyled mt-3 d-flex flex-column">
+                    <li>
+                        <a href="../T-Dashboard/home.html"
+                            class="d-flex align-items-center ps-2 py-3 text-decoration-none">
+                            <i class="fa-solid fa-house-chimney list-icon fa-fw"></i>
+                            <span class="list-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <div class="dropdown d-flex">
+                        <button class="d-flex align-items-center ps-2 py-3 dropdown-toggle" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-book-open-reader list-icon fa-fw"></i>
+                            <span class="list-text">Classes</span>
+                        </button>
+                        <ul id="dropdown-mat" style="background-color: black;" class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1">
+                        </ul>
+                    </div>
+
+                    <li>
+                        <a href="../T-profile/profile.html"
+                            class="d-flex align-items-center ps-2 py-3 text-decoration-none">
+                            <i class="fa-solid fa-user list-icon fa-fw"></i>
+                            <span class="list-text">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="container-fluid ps-4">
+            <div class="row">
+                <nav class="col-lg-12 py-4 px-3">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-5 col-sm-12 search d-flex order-lg-0 order-sm-1">
+                            <button class="input-group-text">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <input type="text" placeholder="Search" class="form-control">
+                        </div>
+
+                        <div id="user-box"
+                            class="col-lg-5 col-sm-12 m-sm-auto m-lg-0 mt-lg-0 mb-sm-4 profile d-flex order-lg-0 order-sm-0">
+                            <div class="user-info d-flex align-items-center pe-2">
+                                <a href="#" class="text-decoration-none d-flex flex-column">
+                                    <span id="userName" class="user-name">DR/ Ahmed Samir</span>
+                                    <small>Doctor Profile</small>
+                                </a>
+
+                            </div>
+
+                            <div class="user-image">
+                                <a href="#">
+                                    <img id="user-photo" src="../../images/Ahmed Samir.jpg" alt="user photo">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="title d-flex justify-content-between col-lg-12 pt-5 pb-3 px-3">
+                <h1 id="matName" class="fw-bold text-dark">Subject Name</h1>
+                <div id="addNewTopic" class="add-topic d-flex align-items-center">
+                    <i class="fa-solid fa-plus me-2 h5"></i>
+                    <h2 class="h3">Add new topic</h2>
+                </div>
+            </div>
+            <div id="topicContainer">
+                <div class="course col-lg-12 py-3 px-3">
+                    <a href="#" class="fs-3 text-dark text-decoration-none">Topic 1</a>
+                    <p class="mt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur magnam
+                        pariatur,
+                        delectus
+                        illum voluptatibus, dolorem incidunt et veniam amet natus, ipsum recusandae iste optio
+                        cupiditate
+                        quis nobis fugiat? Consequuntur.</p>
+                    <button type="button" class="btn btn-dark details">Details</button>
+                    <button type="button" class="btn btn-dark showQR">Show QR</button>
+                </div>
+                <div class="course col-lg-12 py-3 px-3">
+                    <a href="#" class="fs-3 text-dark text-decoration-none">Topic 2</a>
+                    <p class="mt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur magnam
+                        pariatur,
+                        delectus
+                        illum voluptatibus, dolorem incidunt et veniam amet natus, ipsum recusandae iste optio
+                        cupiditate
+                        quis nobis fugiat? Consequuntur.</p>
+                    <button type="button" class="btn btn-dark details">Details</button>
+                    <button type="button" class="btn btn-dark showQR">Show QR</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- profile card -->
+
+    <div class="profile-container d-none">
+        <i id="card-close" class="fa-solid fa-xmark"></i>
+        <div class="profile-card">
+            <div class="card" style="width: 18rem;">
+                <img id="user-card-image" src="../../images/Ahmed Samir.jpg" class="card-img-top w-100"
+                    alt="user-photo">
+                <div class="card-body">
+                    <h5 id="cardName" class="card-title fw-bolder">DR/ Ahmed Samir</h5>
+                    <small>example@gmail.com</small>
+                </div>
+                <ul class="list-group list-group-flush text-center">
+                    <li class="list-group-item "><a href="../T-profile/profile.html"
+                            class="fw-bold text-decoration-none text-black">Profile</a>
+                    </li>
+                    <li class="list-group-item "><a href="../../Sign up - login page/login.html"
+                            class="fw-bold text-decoration-none text-black">Signout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of profile card -->
+
+
+    <!-- QR card -->
+
+    <div class="qr-container d-none">
+        <i id="qr-card-close" class="fa-solid fa-xmark"></i>
+        <div class="qr-card text-center">
+            <div class="card" style="width: 18rem;">
+                <div class="px-3 pt-3">
+                    <div class=" p-2 ">
+                        <img class="w-100" src="../../images/qr.png">
+                    </div>
+                    <div class="card-body pb-0">
+                        <p class="card-text fs-5 fw-bold">Scan The QR Code To Attend</p>
+                        <button id="qr-code-cancel" type="button" class="btn btn-info mb-2">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of QR card -->
+
+    <!-- Add topic -->
+
+    <div class="new-topic-container d-none">
+        <i id="new-topic-close" class="fa-solid fa-xmark"></i>
+        <div class="qr-card">
+            <div class="card" style="width: 30rem;">
+                <div class="px-3 pt-3">
+                    <label for="topicName" class="mb-1 h6 fw-bolder">Name</label>
+                    <input id="topicName" type="text" name="qr-code" placeholder="Enter lecture name"
+                        class="mb-3 form-control topic-input text-center">
+                    <label for="topicDesc" class="mb-1 h6 fw-bolder">Description</label>
+                    <textarea class="form-control topic-input" name="topicDesc" id="topicDesc" cols="30" rows="10"
+                        placeholder="Enter Lecture description"></textarea>
+                    <div class="card-body pb-0 text-center">
+                        <button id="topicSubmit" type="submit" class="btn btn-primary me-2 mb-2">Submit</button>
+                        <button id="new-topic-cancel" type="button" class="btn btn-light ms-2 mb-2">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of add new topic -->
+
+
+    <!-- Topic details -->
+
+    <div class="topic-details-container d-none">
+        <i id="topic-details-close" class="fa-solid fa-xmark"></i>
+        <div class="qr-card">
+            <div class="card" style="width: 30rem;">
+                <div class="px-3 pt-3">
+                    <div id="card-details" class="card-body pb-0 text-center">
+
+                    </div>
+                    <div class="card-body pb-0 text-center">
+                        <button id="topic-details-cancel" type="button" class="btn btn-info ms-2 mb-2">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- End of topic details-->
+
+    <script src="../../js/jquery-3.6.0.slim.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/teacher-qr.js"></script>
+    <script src="../../js/names/subject_name.js"></script>
+    <script src="../../js/new-topic.js"></script>
+    <script src="../../js/drSubject.js"></script>
+</body>
+
+
+</html>

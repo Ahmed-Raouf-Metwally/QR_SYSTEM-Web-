@@ -1,0 +1,144 @@
+#home{
+    background-image: url(../images/Cover.PNG);
+    background-size: cover;
+}
+.black{
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.navbar{
+    padding: 5px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%; 
+    background-color:rgba(8, 8, 8,0.5)  
+}
+.navbar ul a:hover{
+    color: rgb(253, 52, 79) !important;
+}
+.heading{
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+}
+.heading h3{
+    position:absolute;
+    top:0;
+    left:44%;
+    top:65%;
+    font-size:50px;
+}
+.heading h2{
+    font-size:80px;
+    color:#d8d8db;
+}
+.logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 200px;
+}
+.footer-icon {
+    background-color: #1a1a1a;
+    padding: 25px 0;
+    color: #fff;
+}
+.footer-icon .end-content p{
+    display: inline;
+}
+.about-img img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#team
+{
+    background-color: #fafafa;
+}
+
+#team .header h2::after
+{
+    content: "o";
+    position: absolute;
+    font-size: 4rem;
+    opacity: .1;
+    top: 50%;
+    transform: translateY(-60%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+#team .team-imgs img
+{
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+#team .team-info h5
+{
+    font-size: 20px;
+    color: #282828;
+    line-height: 20px;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+#team .team-info p
+{
+    font-size: 16px;
+    line-height: 24.5px;
+    color: #666;
+}
+
+#team .team-overlay
+{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    background-color: #f25454;
+    transition: all .3s;
+}
+
+#team .team-overlay .icons
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#team .team-overlay i
+{
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+#team .team-member:hover h5
+{
+    color: #f25454;
+}
+
+#team .team-member:hover img
+{
+    transform: scale(1.1);
+}
+
+#team .team-member:hover .team-overlay
+{
+    opacity: .8;
+}

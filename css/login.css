@@ -1,0 +1,122 @@
+/* global */
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+
+}
+
+.secondary-color
+{
+    color: #e2b659;
+}
+
+a:hover {
+    color: #e2b659;
+    cursor: pointer;
+}
+
+/* end of global */
+
+.qr-icon
+{
+    font-size: 3.5rem;
+}
+
+.sign-in-img
+{
+    background-color: #000;
+}
+
+.container h2 
+{
+    font-size: 2rem;
+    color: #212121;
+    line-height: 2.4rem;
+}
+
+.container .signin-card
+{
+    background-color: #000;
+}
+
+.container .signin-card h1 , p
+{
+    color: #f8f9fa;
+}
+
+.container .signin-card h1 
+{
+    font-size: 2.5rem;
+    line-height: 3rem;    
+}
+
+.container .signin-card p {
+    font-size: 0.875rem;
+}
+
+.container .signin-card label
+{
+    font-size: 0.875rem;
+    color: #f8f9fa;
+    line-height: 1.313rem;
+    margin-bottom: 8px;
+    
+}
+
+.container .signin-card input
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #212529;
+    background-color: #eeeeee;
+    line-height: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.container .signin-card form a
+{
+    font-size: 0.875rem;
+    -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+            transform: translateY(-3px);
+}
+
+.container .signin-card form button
+{
+    color: #000;
+    font-size: 0.875rem;
+}
+
+.container .signin-card form button:hover
+{
+    color: #212529;
+}
+
+.container .signin-card span
+{
+    color: #9a9b9d;
+}
+
+.container .signin-card .icons i
+{
+    color: #9a9b9d;
+    font-size: 1.163rem;
+    line-height: 0.875rem;
+    padding: 4px;
+    margin-right: 5px;
+}
+
+.container .signin-card ul li, .container .signin-card ul a
+{
+    padding: 5px;
+    color: #9a9b9d;
+    margin-right: 8px;
+    font-size: 0.969rem;
+}
+
+.container .signin-card ul a
+{
+    text-decoration: none;
+}
