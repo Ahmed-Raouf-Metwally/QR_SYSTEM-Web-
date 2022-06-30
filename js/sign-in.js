@@ -1,12 +1,20 @@
 let email = document.getElementById(`email`);
 let password = document.getElementById(`password`);
 let form = document.querySelector(`form`);
+let signIn = document.getElementById(`signInBtn`);
 let userData = {};
 
 
 form.addEventListener(`submit`, function(e){
     e.preventDefault();
     postdata();
+});
+
+signIn.addEventListener(`click`, function() {
+    let logedin = {
+        login: true
+    };
+    localStorage.setItem(`logedIn`, JSON.stringify(logedin))
 });
 
 
@@ -74,6 +82,14 @@ let postdata = async function() {
             document.getElementById("alert").classList.remove("visually-hidden");
         }
     }
-    localStorage.clear();
+    localStorage.removeItem(`userData`);
     localStorage.setItem("userData", JSON.stringify(userData));
 }
+
+function LogedIn() {
+
+    let logedin = {
+        login: false
+    };
+    localStorage.setItem(`logedIn`, JSON.stringify(logedin));
+};

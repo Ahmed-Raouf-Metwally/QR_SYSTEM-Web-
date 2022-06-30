@@ -21,6 +21,13 @@ for (let i = 0; i < courseListside.length; i++) {
         let matNameside = courseListside[i].innerHTML
         localStorage.removeItem(`stumatname`);
         localStorage.setItem("stumatname", JSON.stringify(matNameside));
+        for (let z = 0; z < matObject.length; z++) {
+            if (matNameside == matObject[z].Name) {
+                let matId = matObject[z].ID;
+                localStorage.removeItem(`stumatid`);
+                localStorage.setItem("stumatid", JSON.stringify(matId));
+            }
+        }
         open(`../../Student/Subject/subject.html`,`_self`);
     });
 };

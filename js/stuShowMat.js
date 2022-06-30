@@ -7,7 +7,7 @@ for (let i = 0; i < matObject.length; i++) {
     
         <div class="course d-flex flex-column mt-4 px-0">
             <div class="course-image">
-                <img src="https://source.unsplash.com/1600x900/?books">
+                <img src="../../images/${i}.jpg">
             </div>
 
             <div class="course-info p-3 pb-0">
@@ -37,13 +37,28 @@ for (let i = 0; i < courseList.length; i++) {
         let matName = courseList[i].innerHTML
         localStorage.removeItem(`stumatname`);
         localStorage.setItem("stumatname", JSON.stringify(matName));
-        open(`../../Student/Subject/subject.html`,`_self`);
+        for (let z = 0; z < matObject.length; z++) {
+            if (matName == matObject[z].Name) {
+                let matId = matObject[z].ID;
+                localStorage.removeItem(`stumatid`);
+                localStorage.setItem("stumatid", JSON.stringify(matId));
+            }
+        }
+        open(`../../Student/Subject/subject.html`, `_self`);
     });
-
+}
+for (let i = 0; i < courseListside.length; i++) {
     courseListside[i].addEventListener(`click`, function () {
         let matNameside = courseListside[i].innerHTML
         localStorage.removeItem(`stumatname`);
         localStorage.setItem("stumatname", JSON.stringify(matNameside));
-        open(`../../Student/Subject/subject.html`,`_self`);
+        for (let z = 0; z < matObject.length; z++) {
+            if (matNameside == matObject[z].Name) {
+                let matId = matObject[z].ID;
+                localStorage.removeItem(`stumatid`);
+                localStorage.setItem("stumatid", JSON.stringify(matId));
+            }
+        }
+        open(`../../Student/Subject/subject.html`, `_self`);
     });
 };

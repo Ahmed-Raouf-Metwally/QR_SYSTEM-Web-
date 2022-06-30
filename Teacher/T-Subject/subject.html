@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/all.min.css">
     <link rel="stylesheet" href="../../css/subject.css">
+    <script src="../../js/getAllDrTopic.js"></script>
 
 </head>
 
 
-<body>
+<body onload="getDrTopics()">
     <div class="d-flex main">
         <aside class="px-3 pt-3 sidebar vh-100 flex-shrink-0">
             <div class="d-flex flex-column">
@@ -96,28 +97,7 @@
                 </div>
             </div>
             <div id="topicContainer">
-                <div class="course col-lg-12 py-3 px-3">
-                    <a href="#" class="fs-3 text-dark text-decoration-none">Topic 1</a>
-                    <p class="mt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur magnam
-                        pariatur,
-                        delectus
-                        illum voluptatibus, dolorem incidunt et veniam amet natus, ipsum recusandae iste optio
-                        cupiditate
-                        quis nobis fugiat? Consequuntur.</p>
-                    <button type="button" class="btn btn-dark details">Details</button>
-                    <button type="button" class="btn btn-dark showQR">Show QR</button>
-                </div>
-                <div class="course col-lg-12 py-3 px-3">
-                    <a href="#" class="fs-3 text-dark text-decoration-none">Topic 2</a>
-                    <p class="mt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur magnam
-                        pariatur,
-                        delectus
-                        illum voluptatibus, dolorem incidunt et veniam amet natus, ipsum recusandae iste optio
-                        cupiditate
-                        quis nobis fugiat? Consequuntur.</p>
-                    <button type="button" class="btn btn-dark details">Details</button>
-                    <button type="button" class="btn btn-dark showQR">Show QR</button>
-                </div>
+                
             </div>
 
         </section>
@@ -139,7 +119,7 @@
                     <li class="list-group-item "><a href="../T-profile/profile.html"
                             class="fw-bold text-decoration-none text-black">Profile</a>
                     </li>
-                    <li class="list-group-item "><a href="../../Sign up - login page/login.html"
+                    <li class="list-group-item "><a id="cardSignOut" href="../../Sign up - login page/login.html"
                             class="fw-bold text-decoration-none text-black">Signout</a></li>
                 </ul>
             </div>
@@ -176,18 +156,20 @@
         <i id="new-topic-close" class="fa-solid fa-xmark"></i>
         <div class="qr-card">
             <div class="card" style="width: 30rem;">
-                <div class="px-3 pt-3">
-                    <label for="topicName" class="mb-1 h6 fw-bolder">Name</label>
-                    <input id="topicName" type="text" name="qr-code" placeholder="Enter lecture name"
-                        class="mb-3 form-control topic-input text-center">
-                    <label for="topicDesc" class="mb-1 h6 fw-bolder">Description</label>
-                    <textarea class="form-control topic-input" name="topicDesc" id="topicDesc" cols="30" rows="10"
-                        placeholder="Enter Lecture description"></textarea>
-                    <div class="card-body pb-0 text-center">
-                        <button id="topicSubmit" type="submit" class="btn btn-primary me-2 mb-2">Submit</button>
-                        <button id="new-topic-cancel" type="button" class="btn btn-light ms-2 mb-2">Cancel</button>
+                <form action="../../js/new-topic.js" method="post">
+                    <div class="px-3 pt-3">
+                        <label for="topicName" class="mb-1 h6 fw-bolder">Name</label>
+                        <input id="topicName" type="text" name="Name" placeholder="Enter lecture name"
+                            class="mb-3 form-control topic-input text-center">
+                        <label for="topicDesc" class="mb-1 h6 fw-bolder">Description</label>
+                        <textarea class="form-control topic-input" name="Discption" id="topicDesc" cols="30" rows="10"
+                            placeholder="Enter Lecture description"></textarea>
+                        <div class="card-body pb-0 text-center">
+                            <button id="topicSubmit" type="submit" class="btn btn-primary me-2 mb-2">Submit</button>
+                            <button id="new-topic-cancel" type="button" class="btn btn-light ms-2 mb-2">Cancel</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -223,6 +205,7 @@
     <script src="../../js/names/subject_name.js"></script>
     <script src="../../js/new-topic.js"></script>
     <script src="../../js/drSubject.js"></script>
+    <script src="../../js/SignOut.js"></script>
 </body>
 
 

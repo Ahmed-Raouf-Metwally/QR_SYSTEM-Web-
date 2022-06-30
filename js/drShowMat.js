@@ -7,7 +7,7 @@ for (let i = 0; i < matObject.length; i++) {
     
         <div class="course d-flex flex-column mt-4 px-0">
             <div class="course-image">
-                <img src="https://source.unsplash.com/1600x900/?books">
+                <img src="../../images/${i}.jpg">
             </div>
 
             <div class="course-info p-3 pb-0">
@@ -34,16 +34,32 @@ courseListside = document.querySelectorAll(`.dropdown-item`);
 
 for (let i = 0; i < courseList.length; i++) {
     courseList[i].addEventListener(`click`, function () {
-        let matName = courseList[i].innerHTML
+        let matName = courseList[i].innerHTML;
         localStorage.removeItem(`drmatname`);
         localStorage.setItem("drmatname", JSON.stringify(matName));
-        open(`../../Teacher/T-Subject/subject.html`,`_self`);
+        for (let z = 0; z < matObject.length; z++) {
+            if (matName == matObject[z].Name) {
+                let matId = matObject[z].ID;
+                localStorage.removeItem(`drmatid`);
+                localStorage.setItem("drmatid", JSON.stringify(matId));
+            }
+        }
+        open(`../../Teacher/T-Subject/subject.html`, `_self`);
     });
+}
 
+for (let i = 0; i < courseListside.length; i++) {
     courseListside[i].addEventListener(`click`, function () {
-        let matNameside = courseListside[i].innerHTML
+        let matNameside = courseListside[i].innerHTML;
         localStorage.removeItem(`drmatname`);
         localStorage.setItem("drmatname", JSON.stringify(matNameside));
-        open(`../../Teacher/T-Subject/subject.html`,`_self`);
+        for (let z = 0; z < matObject.length; z++) {
+            if (matNameside == matObject[z].Name) {
+                let matId = matObject[z].ID;
+                localStorage.removeItem(`drmatid`);
+                localStorage.setItem("drmatid", JSON.stringify(matId));
+            }
+        }
+        open(`../../Teacher/T-Subject/subject.html`, `_self`);
     });
-};
+}
