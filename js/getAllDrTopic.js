@@ -1,5 +1,5 @@
 let matId = JSON.parse(localStorage.getItem(`drmatid`))
-
+let topicId = {}
 async function getDrTopics() {
     let topic = {
         Mat_ID: matId
@@ -17,11 +17,12 @@ async function getDrTopics() {
     let Topic = await res.Topics
     
     for (let i = 0; i < Topic.length; i++) {
-        $(`#topicContainer`).append(`<div class="course col-lg-12 py-3 px-3">
+        $(`#topicContainer`).append(`<div onclick="showQr();showDetails();qrGenerate()" class="course col-lg-12 py-3 px-3 topic">
             <a href="#" class="fs-3 text-dark text-decoration-none fw-bold">${Topic[i].Name}</a>
             <p class="mt-3">${Topic[i].Discption}</p>
             <button type="button" class="btn btn-dark details">Details</button>
             <button type="button" class="btn btn-dark showQR">Show QR</button>
+            <p class="mt-3 d-none topicId">${Topic[i].ID}</p>
             </div>`);
     }
 };

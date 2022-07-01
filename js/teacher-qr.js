@@ -1,4 +1,3 @@
-
 var showQR = document.getElementsByClassName('showQR');
 var qrContainer = document.querySelector('.qr-container');
 var qrCardClose = document.getElementById('qr-card-close');
@@ -13,18 +12,21 @@ var detailsContainer = document.querySelector('.topic-details-container');
 var detailsCardClose = document.getElementById('topic-details-close');
 var detailsCancle = document.getElementById('topic-details-cancel');
 
+function showQr() {
 for (var i = 0; i < showQR.length; i++) {
     showQR[i].addEventListener('click', function () {
         qrContainer.classList.replace('d-none', 'd-flex');
     });
 }
-
+}
+function showDetails(){
 for (var s = 0; s < details.length; s++) {
     details[s].addEventListener('click', function () {
         detailsContainer.classList.replace('d-none', 'd-flex');
         cardDetails.innerHTML = `<h3 class="fw-bold">Lecture Name</h3>
         <p class="h5 my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ratione quisquam soluta recusandae iste qui consequatur nesciunt aperiam obcaecati eos labore praesentium necessitatibus, officiis cumque ullam, quibusdam aliquid perferendis! Repudiandae!</p>`
     });
+}
 }
 
 function close() {
