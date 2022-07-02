@@ -1,5 +1,5 @@
 let adminId = document.getElementById(`adminId`);
-let adminName = document.getElementById(`adminName`);
+let adminName = document.getElementById(`adminname`);
 let adminEmail = document.getElementById(`adminEmail`);
 let adminPassword = document.getElementById(`adminPassword`);
 let form = document.querySelector(`form`);
