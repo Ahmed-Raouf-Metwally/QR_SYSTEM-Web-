@@ -26,11 +26,8 @@ for (var i = 0; i < showQR.length; i++) {
 async function attendList() { 
     
     let attend = {
-        Mat_ID:1101,
-        Topic_ID:1
-        /*Mat_ID: JSON.parse(localStorage.getItem(`drmatid`)),
+        Mat_ID: JSON.parse(localStorage.getItem(`drmatid`)),
         Topic_ID: JSON.parse(localStorage.getItem(`topicId`)),
-        Stud_ID: userid.userId*/
     }
 
     const response = await fetch(`https://qr-atendans.herokuapp.com/attendansList`, {
