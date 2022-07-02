@@ -16,15 +16,15 @@ let topicid;
 let attendlist = document.getElementById(`attendList`);
 
 function showQr() {
-for (var i = 0; i < showQR.length; i++) {
-    showQR[i].addEventListener('click', function () {
-        qrContainer.classList.replace('d-none', 'd-flex');
-    });
-}
+    for (var i = 0; i < showQR.length; i++) {
+        showQR[i].addEventListener('click', function () {
+            qrContainer.classList.replace('d-none', 'd-flex');
+        });
+    }
 }
 
-async function attendList() { 
-    
+async function attendList() {
+
     let attend = {
         Mat_ID: JSON.parse(localStorage.getItem(`drmatid`)),
         Topic_ID: JSON.parse(localStorage.getItem(`topicId`)),
@@ -43,21 +43,53 @@ async function attendList() {
     for (let i = 0; i < res.Attendans.length; i++) {
         let trs = "";
         for (let i = 0; i < res.Attendans.length; i++) {
-            trs += `<tr>
+            trs += `<tr class="drAttendList">
                         <td>${res.Attendans[i].Name}</td>
                         <td>${res.Attendans[i].ID}</td>
+                        <td><button onclick="deleteAttend()" class="btn btn-danger delete">Delete</button></td>
                     </tr>`
         }
+
         document.getElementById("attendList").innerHTML = trs;
+
+        let id = Array.from(document.getElementsByClassName(`drAttendList`));
+        let Delete = Array.from(document.getElementsByClassName(`delete`));
+
+        for (let i = 0; i < id.length; i++) {
+            //console.log(id[i].children[1].innerHTML);
+            for (let i = 0; i < Delete.length; i++) {
+                Delete[i].addEventListener(`click`, function () {
+                    localStorage.setItem(`stuidattend`, JSON.stringify(id[i].children[1].innerHTML));
+                    
+                });
+            }
+        }
     }
 }
 
-function showDetails(){
-for (var s = 0; s < details.length; s++) {
-    details[s].addEventListener('click', function () {
-        detailsContainer.classList.replace('d-none', 'd-flex');
+async function deleteAttend() {
+    let ID = {
+        sID: JSON.parse(localStorage.getItem(`stuidattend`)),
+        mID: JSON.parse(localStorage.getItem(`drmatid`)),
+        tID: JSON.parse(localStorage.getItem(`topicId`))
+    }
+    await fetch(`https://qr-atendans.herokuapp.com/deletStudentfromattend`, {
+        method: `delete`,
+        body: JSON.stringify(ID),
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Access-Control-Allow-Origin': '*'
+        }
     });
+    window.location.replace(`../../Teacher/T-Subject/subject.html`)
 }
+
+function showDetails() {
+    for (var s = 0; s < details.length; s++) {
+        details[s].addEventListener('click', function () {
+            detailsContainer.classList.replace('d-none', 'd-flex');
+        });
+    }
 }
 
 function close() {
