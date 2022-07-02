@@ -20,8 +20,6 @@ async function getStuTopics() {
         $(`#topicContainer`).append(`<div class="course col-lg-12 py-3 px-3">
             <a href="#" class="fs-3 text-dark text-decoration-none fw-bold">${Topic[i].Name}</a>
             <p class="mt-3">${Topic[i].Discption}</p>
-            <button type="button" class="btn btn-dark details">Details</button>
-            <button type="button" class="btn btn-dark showQR">Show QR</button>
             </div>`);
     }
 };

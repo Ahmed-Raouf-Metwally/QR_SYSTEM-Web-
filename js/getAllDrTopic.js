@@ -17,7 +17,7 @@ async function getDrTopics() {
     let Topic = await res.Topics
     
     for (let i = 0; i < Topic.length; i++) {
-        $(`#topicContainer`).append(`<div onclick="showQr();showDetails();qrGenerate()" class="course col-lg-12 py-3 px-3 topic">
+        $(`#topicContainer`).append(`<div onclick="showQr();showDetails();qrGenerate();attendList()" class="course col-lg-12 py-3 px-3 topic">
             <a href="#" class="fs-3 text-dark text-decoration-none fw-bold">${Topic[i].Name}</a>
             <p class="mt-3">${Topic[i].Discption}</p>
             <button type="button" class="btn btn-dark details">Details</button>

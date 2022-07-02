@@ -14,18 +14,18 @@ form.addEventListener(`submit`, async function (e) {
         Password: docPassword.value
     };
 
-        let response = await fetch(`https://qr-atendans.herokuapp.com/addDoctor`, {
+    let response = await fetch(`https://qr-atendans.herokuapp.com/addDoctor`, {
         method: `POST`,
         body: JSON.stringify(addDoctor),
         headers: {
             'Content-Type': 'application/json; charset=UTF-8',
-            'Access-Control-Allow-Origin':'*'
-          }
+            'Access-Control-Allow-Origin': '*'
+        }
     });
     let res = await response.json();
     console.log(res)
 
-    if(res.message == 'Done') {
+    if (res.message == 'Done') {
         document.getElementById("successAlert").classList.remove("visually-hidden");
         document.getElementById("failedAlert").classList.add("visually-hidden");
         formBtn.classList.add("disabled");

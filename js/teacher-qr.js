@@ -11,6 +11,9 @@ var cardDetails = document.getElementById('card-details');
 var detailsContainer = document.querySelector('.topic-details-container');
 var detailsCardClose = document.getElementById('topic-details-close');
 var detailsCancle = document.getElementById('topic-details-cancel');
+let topiC = Array.from(document.getElementsByClassName(`topic`));
+let topicid;
+let attendlist = document.getElementById(`attendList`);
 
 function showQr() {
 for (var i = 0; i < showQR.length; i++) {
@@ -19,12 +22,43 @@ for (var i = 0; i < showQR.length; i++) {
     });
 }
 }
+
+async function attendList() { 
+    
+    let attend = {
+        Mat_ID:1101,
+        Topic_ID:1
+        /*Mat_ID: JSON.parse(localStorage.getItem(`drmatid`)),
+        Topic_ID: JSON.parse(localStorage.getItem(`topicId`)),
+        Stud_ID: userid.userId*/
+    }
+
+    const response = await fetch(`https://qr-atendans.herokuapp.com/attendansList`, {
+        method: "post",
+        body: JSON.stringify(attend),
+        headers: {
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
+    });
+    let res = await response.json();
+    console.log(res.Attendans)
+    for (let i = 0; i < res.Attendans.length; i++) {
+        let trs = "";
+        for (let i = 0; i < res.Attendans.length; i++) {
+            trs += `<tr>
+                        <td>${res.Attendans[i].Name}</td>
+                        <td>${res.Attendans[i].ID}</td>
+                    </tr>`
+        }
+        document.getElementById("attendList").innerHTML = trs;
+    }
+}
+
 function showDetails(){
 for (var s = 0; s < details.length; s++) {
     details[s].addEventListener('click', function () {
         detailsContainer.classList.replace('d-none', 'd-flex');
-        cardDetails.innerHTML = `<h3 class="fw-bold">Lecture Name</h3>
-        <p class="h5 my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ratione quisquam soluta recusandae iste qui consequatur nesciunt aperiam obcaecati eos labore praesentium necessitatibus, officiis cumque ullam, quibusdam aliquid perferendis! Repudiandae!</p>`
     });
 }
 }
