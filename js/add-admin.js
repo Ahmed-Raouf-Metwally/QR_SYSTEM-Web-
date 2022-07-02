@@ -23,7 +23,6 @@ form.addEventListener(`submit`, async function (e) {
           }
     });
     let res = await response.json();
-    console.log(res)
 
     if(res.message == 'Done') {
         document.getElementById("successAlert").classList.remove("visually-hidden");
